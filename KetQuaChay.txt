@@ -1,0 +1,20 @@
+=== DEMO EVENTS ===
+[Warning] PRJ-01: Pin máy chiếu còn 18%.
+[Critical] PRJ-01: Pin máy chiếu đã hết.
+[Critical] AC-01: Điều hòa tại phòng A.101 không phản hồi.
+[Warning] MIC-01: Pin micro còn 25%.
+[Warning] MIC-01: Chất lượng tín hiệu micro còn 35%.
+[Critical] MIC-01: Tín hiệu micro đã mất.
+[FILTER CRITICAL] MIC-01: Tín hiệu micro đã mất.
+Audit entries: 1
+Maintenance requests: 3
+=== KIỂM THỬ ===
+PASS: Cập nhật trạng thái ghi đúng một log
+PASS: Pin máy chiếu cảnh báo ngưỡng dưới 20 và mức 0
+PASS: Mất phản hồi điều hòa chỉ tạo một cảnh báo bảo trì
+PASS: Micro mức cảnh báo thấp không tạo yêu cầu bảo trì
+PASS: Delegate chỉ nhận cảnh báo Critical
+PASS: Pin ngoài khoảng (DeviceId=MIC-01, Value=101)
+PASS: Tín hiệu ngoài khoảng (DeviceId=MIC-01, Value=-1)
+Ghi chú: có thể bổ sung kiểm thử biên cho mọi chỉ số theo cùng cách.
+Audit sau Unsubscribe (không tăng): 1
