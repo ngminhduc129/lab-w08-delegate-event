@@ -2,26 +2,31 @@
 
 Ứng dụng console C# minh họa quản lý thiết bị giảng dạy bằng event và delegate.
 
+GitHub: https://github.com/ngminhduc129/lab-w08-delegate-event
+
 ## Chạy chương trình
 
 ```powershell
 dotnet run --project src/DelegateEventLab/DelegateEventLab.csproj
 ```
 
-## Nội dung
+## Thành phần chính
 
-- Thiết bị: ProjectorRemote, AirConditionerRemote, WirelessMicrophone.
-- Event: StatusChanged, AlertRaised; dữ liệu event và ngoại lệ chỉ số không hợp lệ.
-- Subscriber: thông báo console, audit logger, maintenance service.
-- Delegate callback: lọc cảnh báo Critical.
-- Coordinator: đăng ký/hủy đăng ký subscriber, không đăng ký trùng và hỗ trợ Dispose.
-- PDF báo cáo: sơ đồ lớp, giải thích thiết kế, kết quả chạy và kiểm thử.
+- `TeachingDevice`: lớp cơ sở và hai event `StatusChanged`, `AlertRaised`.
+- `ProjectorRemote`, `AirConditionerRemote`, `WirelessMicrophone`: publisher cụ thể.
+- `ConsoleNotificationService`, `DeviceAuditLogger`, `MaintenanceService`: subscriber.
+- `FilteredAlertSubscriber`: callback lọc cảnh báo bằng delegate.
+- `DeviceMonitoringCoordinator`: quản lý đăng ký/hủy đăng ký subscriber.
+- `InvalidDeviceReadingException`: báo chỉ số ngoài khoảng 0-100.
 
-## Thông tin sinh viên
+## Cập nhật và đẩy thay đổi lên GitHub
 
-Mã sinh viên: `[ĐIỀN MÃ SINH VIÊN]`  
-Họ tên: `[ĐIỀN HỌ TÊN]`
+Sau khi điền mã sinh viên/họ tên hoặc sửa mã nguồn, mở PowerShell tại thư mục này và chạy:
 
-## Cập nhật thông tin GitHub trong báo cáo
+```powershell
+git add .
+git commit -m "Update lab W08 submission"
+git push
+```
 
-Sau khi điền mã sinh viên và họ tên vào các tệp `.cs` và PDF, thay URL repository thực tế ở trang đầu PDF.
+Trước khi nộp, điền mã sinh viên và họ tên ở đầu các file `.cs` và trang đầu PDF.
